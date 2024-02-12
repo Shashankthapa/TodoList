@@ -1,0 +1,9 @@
+#root {
+    background-color: #3e6bba;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
