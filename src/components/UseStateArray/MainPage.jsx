@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../mainPage.css";
 
 export default function MainPage(prop) {
   let [name, setName] = useState();
@@ -7,11 +8,14 @@ export default function MainPage(prop) {
 
   return (
     <>
-      <h1>Todo</h1>
+      <h1 className="header">Todo</h1>
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          prop.setEmp([...prop.emp, {id : prop.id, name: name, age: age, no: no }]);
+          prop.setEmp([
+            ...prop.emp,
+            { id: prop.id, name: name, age: age, no: no },
+          ]);
         }}
       >
         Name :
@@ -36,11 +40,11 @@ export default function MainPage(prop) {
           placeholder="Enter the phone no."
         />
         <input
-          style={{ border: "1px solid black", marginLeft: "10px" }}
-          onClick = {() => {
-            let propID = prop.id;         
+          style={{ border: "1px solid black" }}
+          onClick={() => {
+            let propID = prop.id;
             propID++;
-            prop.setId(propID); 
+            prop.setId(propID);
           }}
           type="submit"
           value="Submit"
